@@ -14,5 +14,19 @@ const findNumder = () => {
 		}
 	}
 };
+// Correct Answer: 117946
 
-console.log(findNumder());
+// Second part of the problem
+const findSixZeros = () => {
+	for (let i = 1; i < Infinity; i++) {
+		let str = input;
+		str += i;
+
+		str = md5(str);
+
+		if (str.substring(0, 6) === "000000") {
+			return i;
+		}
+	}
+};
+// Correct Answer: 3938038
