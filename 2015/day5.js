@@ -1038,4 +1038,23 @@ const countNice = () => {
 	console.log(result);
 };
 
-//countNice();
+countNice();
+
+const countNicev2 = () => {
+	const LETTERS = "abcdefghijklmnopqrstuvwxyz";
+
+	const containPair = (string) => /([a-z][a-z]).*\1/.test(string);
+	const containRepeatedLetter = (string) => /([a-z])[a-z]\1/.test(string);
+
+	const isNiceString = (string) =>
+		!!(containPair(string) && containRepeatedLetter(string));
+
+	const result = INPUT.reduce(
+		(total, string) => (isNiceString(string) ? ++total : total),
+		0
+	);
+
+	console.log(result);
+};
+
+countNicev2();
